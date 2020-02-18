@@ -64,14 +64,14 @@
   <script src="{{asset('public')}}/lib/jquery/jquery.min.js"></script>
 
   <script src="{{asset('public')}}/lib/bootstrap/js/bootstrap.min.js"></script>
-  <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
+  <script class="include" type="text/javascript" src="{{asset('public')}}/lib/jquery.dcjqaccordion.2.7.js"></script>
   <script src="{{asset('public')}}/lib/jquery.scrollTo.min.js"></script>
   <script src="{{asset('public')}}/lib/jquery.nicescroll.js" type="text/javascript"></script>
   <script src="{{asset('public')}}/lib/jquery.sparkline.js"></script>
   <!--common script for all pages-->
   <script src="{{asset('public')}}/lib/common-scripts.js"></script>
-  <script type="text/javascript" src="lib/gritter/js/jquery.gritter.js"></script>
-  <script type="text/javascript" src="lib/gritter-conf.js"></script>
+  <script type="text/javascript" src="{{asset('public')}}/lib/gritter/js/jquery.gritter.js"></script>
+  <script type="text/javascript" src="{{asset('public')}}/lib/gritter-conf.js"></script>
   <!--script for this page-->
   <script src="{{asset('public')}}/lib/sparkline-chart.js"></script>
   <script src="{{asset('public')}}/lib/zabuto_calendar.js"></script>
