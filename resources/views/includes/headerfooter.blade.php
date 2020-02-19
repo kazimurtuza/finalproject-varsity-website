@@ -71,7 +71,8 @@
             <ul class="navbar-nav absolute-right">
               <li>
                 
-                <a href="{{route('login')}}">Login</a> / <a href="{{route('admin-register')}}">Register</a>
+                <a href="{{route('login')}}">Login</a> 
+                {{-- / <a href="{{route('admin-register')}}">Register</a> --}}
               </li>
             </ul>
             
