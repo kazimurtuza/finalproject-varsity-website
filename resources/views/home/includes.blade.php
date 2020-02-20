@@ -248,8 +248,8 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="/profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-          <h5 class="centered">Sam Soffes</h5>
+        <p class="centered"><a href="/profile.html"><img src="{{asset(auth::user()->photo)}}" class="img-circle" width="80"></a></p>
+        <h5 class="centered">{{auth::user()->name}}</h5>
           <li class="mt">
             <a class="active" href="">
               <i class="fa fa-dashboard"></i>
@@ -277,8 +277,8 @@
               <span>Components</span>
               </a>
             <ul class="sub">
-              <li><a href="/grids.html">Grids</a></li>
-              <li><a href="/calendar.html">Calendar</a></li>
+            <li><a href="{{route('EditUser-profile')}}">Edit profile</a></li>
+              <li><a href="{{route('Show-User-profile')}}">user profile</a></li>
               <li><a href="/gallery.html">Gallery</a></li>
               <li><a href="/todo_list.html">Todo List</a></li>
               <li><a href="/dropzone.html">Dropzone File Upload</a></li>
