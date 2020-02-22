@@ -1,23 +1,57 @@
 @extends('includes.headerFooter')
 @section('content')
 
-
+@if('show'=='show')
+<div class="" style="background-color: honeydew;
+background-color: honeydew;
+    position: absolute;
+    left: 12%;
+    top: 15%;
+    height: 5%;
+    width: 79%;
+    z-index: 3;">
+       <div style="height: 100%;
+       position: absolute;
+       text-align:center;
+       color:ivory;
+       font-size: 120%;
+       z-index: 4;
+    left: -1%;
+    top: 0%;
+    transform: skew(20deg);
+      background: red;
+      width:10%;background:black;"> <span>Announce</span> </div>
+    
+    <marquee behavior="" direction="" style="color:red;font-style: italic;"> 
+  
+      bangla admishon is started</marquee> </div>
+      @endif
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
+  @php
+      $sliders=App\Homeslider::all()->where('status','1');
+  @endphp
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="{{asset('public/images/big_image_1.jpg')}}" alt="First slide">
+    @foreach ($sliders as $slider)
+  <div class="carousel-item {{$loop->first ? 'active ': ''}}">
+      <img class="d-block w-100" src="{{asset($slider->sliderpic)}}" alt="First slide">
+      <div class="carousel-caption bg-info">
+        <h3> {{$slider->title}}</h3>
+        <p> {{$slider->about}}</p>
+      </div>
+ 
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="{{asset('public/images/big_image_2.jpg')}}" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="{{asset('public/images/big_image_3.jpg')}}" alt="Third slide">
-    </div>
+    @endforeach
+ 
+    {{-- <div class="carousel-item">
+      <img class="d-block w-100" src="{{asset($slider->sliderpic)}}" alt="Second slide">
+    </div> --}}
+
+ 
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -37,8 +71,8 @@
           <div class="col-md-6 order-md-2">
             <div class="block-16">
               <figure>
-                <img src="images/img_1.jpg" alt="Image placeholder" class="img-fluid">
-                <a href="https://vimeo.com/45830194" class="play-button popup-vimeo"><span class="ion-ios-play"></span></a>
+                <img src="{{asset('public/images/big_image_1.jpg')}}" alt="Image placeholder" class="img-fluid">
+                <a href="https://www.youtube.com/watch?v=dncTfbj76Pk" class="play-button popup-vimeo"><span class="ion-ios-play"></span></a>
 
                 <a href="https://vimeo.com/45830194" class="button popup-vimeo" data-aos="fade-right" data-aos-delay="700"><span class="ion-ios-play"></span></a> 
 
@@ -119,7 +153,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
-            <figure><img src="images/img_2_b.jpg" alt="Image placeholder" class="img-fluid"></figure>
+            <figure><img src="{{asset('public/images/big_image_1.jpg')}}" alt="Image placeholder" class="img-fluid"></figure>
           </div>
           <div class="col-lg-5 ml-auto">
             <div class="block-15">

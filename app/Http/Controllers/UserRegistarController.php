@@ -58,10 +58,17 @@ class UserRegistarController extends Controller
          return view('admin.userlist',['user'=>$user]);
     }
 
-    public function EditUserProfile()
+    public function EditHomeSlide()
     {
-        return view('admin.edituser-profile');
+        return view('admin.EditHomePage');
     }
+    public function PostEditHomeSlide()
+    {
+        return "PostEditHomeSlide";
+    }
+
+
+
     public function EditUserinfo(Request $request)
     {
         

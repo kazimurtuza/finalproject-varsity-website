@@ -147,7 +147,7 @@
                   Hi, I need your help with this.
                   </span>
                   </a>
-              </li>
+              </li>  
               <li>
                 <a href="#">
                   <span class="photo"><img alt="avatar" src="img/ui-danro.jpg"></span>
@@ -277,22 +277,22 @@
               <span>Components</span>
               </a>
             <ul class="sub">
-            <li><a href="{{route('EditUser-profile')}}">Edit profile</a></li>
+            <li><a href="{{route('Edit-home-slide')}}">Edit profile</a></li>
               <li><a href="{{route('Show-User-profile')}}">user profile</a></li>
               <li><a href="/gallery.html">Gallery</a></li>
-              <li><a href="/todo_list.html">Todo List</a></li>
+              <li><a href="/todo_list.html">page satting</a></li>
               <li><a href="/dropzone.html">Dropzone File Upload</a></li>
               <li><a href="/inline_editor.html">Inline Editor</a></li>
               <li><a href="/file_upload.html">Multiple File Upload</a></li>
             </ul>
           </li>
           <li class="sub-menu">
-            <a href="#">
+            <a href="#">                
               <i class="fa fa-book"></i>
               <span>Extra Pages</span>
               </a>
             <ul class="sub">
-              <li><a href="/blank.html">Blank Page</a></li>
+            <li><a href="{{route('Edit-home-slide')}}">Edit home page</a></li>
               <li><a href="/login.html">Login</a></li>
               <li><a href="/lock_screen.html">Lock Screen</a></li>
               <li><a href="/profile.html">Profile</a></li>

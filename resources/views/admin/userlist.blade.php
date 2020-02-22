@@ -30,7 +30,7 @@
               <td>{{$user->name}}</td>
               <td>{{$user->email}} </td>
               <td>{{$user->phone}}</td>
-              <td>{{$user->photo}}</td>
+              <td> <a href="{{asset($user->photo)}}"> <img src="{{asset($user->photo)}} " style="height:40px;width:80px" alt="no image here"> </a></td>
               <td>
                 <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
                 <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>

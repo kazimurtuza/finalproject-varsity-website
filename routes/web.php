@@ -27,8 +27,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/add-Registration','UserRegistarController@addregister')->name('add-Registration');
 Route::get('/user-Registration','UserRegistarController@showRegisterForm')->name('user-Registration');
 Route::get('/user-list','UserRegistarController@showuserlist')->name('user-list');
-Route::get('/EditUser-profile','UserRegistarController@EditUserProfile')->name('EditUser-profile');
-Route::post('/EditUser-profile','UserRegistarController@ChangeProfile')->name('EditUser-profile');
+
+
+Route::get('/Edit-home-slide','UserRegistarController@EditHomeSlide')->name('Edit-home-slide');
+Route::post('/PosrEdit-home-slide','HomesliderController@PostEditHomeSlide')->name('PostEdit-home-slide');
+
+
 Route::get('/EditUser-info','UserRegistarController@EditUserinfo')->name('EditUser-info');
 
 Route::post('/PostEditUser-info','UserRegistarController@PostEditUserinfo')->name('PostEditUser-info');
