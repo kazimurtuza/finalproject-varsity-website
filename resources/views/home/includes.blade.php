@@ -289,11 +289,11 @@
           <li class="sub-menu">
             <a href="#">                
               <i class="fa fa-book"></i>
-              <span>Extra Pages</span>
+              <span>Edit Page</span>
               </a>
             <ul class="sub">
-            <li><a href="{{route('Edit-home-slide')}}">Edit home page</a></li>
-              <li><a href="/login.html">Login</a></li>
+            <li><a href="{{route('Edit-home-slide')}}">Add home page</a></li>
+              <li><a href="{{route('announce-home-slide',['announce'=>'announce'])}}">Announce home page</a></li>
               <li><a href="/lock_screen.html">Lock Screen</a></li>
               <li><a href="/profile.html">Profile</a></li>
               <li><a href="/invoice.html">Invoice</a></li>

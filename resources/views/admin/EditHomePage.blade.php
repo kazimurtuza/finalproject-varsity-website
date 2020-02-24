@@ -1,10 +1,44 @@
 @extends('home.includes')
     @section('content')
     <h4 class="m-auto" style="text-align:center;">
-      <span style="background:#319793;padding:3px 50px;color:white;margin-bottom:20%">Edit Home Page</span>
+      <span style="background:#319793;padding:3px 50px;color:white;margin-bottom:20%">{{$id =='Edit announce' ?'Announcce':'Edit Home Page'}}</span>
       </h4>
-    
-    
+      @php
+          $announce=App\annonce::find(1);
+      @endphp
+
+      @if($id =='announce')
+      {{-- {{ route('annonce-home-slide') }} --}}
+      <form action="{{ route('post-annonce-slide') }}" method="post" enctype="multipart/form-data">
+        @csrf
+        <div class="row">
+          <div class="col-md-12 form-group">
+            <label for="about">Announce</label>
+          <textarea name="about" class="form-control py-2 @error('title') is-invalid @enderror  "id="" cols="50" rows="10" autocomplete="about" autofocus required>{{$announce->announce}}</textarea>
+
+              @error('about')
+              {{$message}}
+              @enderror
+          </div>
+        </div>    
+        <div class="row">
+      {{$announce->status}}
+          <div class="col-lg-10">
+            <label for="about">publish</label>
+            <input type="radio" name="status"{{$announce->status == '1' ? 'checked' : ''}} hecked value="1" id="">
+            <label for="about">unpublish</label>
+            <input type="radio" name="status" {{$announce->status=='0'?'checked':''}} value="0" id="">
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <input type="submit" value="update" class="btn btn-primary px-5 py-2">
+          </div>
+        </div>
+      </form>
+
+      @else
     <section class="site-section"style="margin-left:20px">
       <div class="container m-auto">
         <div class="row justify-content-cente" style="padding-left:20%">
@@ -91,6 +125,7 @@
         </div>
       </div>
     </section>
+    @endif
 
     <script src="jquery-1.9.1.js"></script>
 <script>

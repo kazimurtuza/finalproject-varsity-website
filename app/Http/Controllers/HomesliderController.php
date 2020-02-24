@@ -33,7 +33,7 @@ class HomesliderController extends Controller
         $imgpath='public/images/slideimg/';
         $imagename=$file->getClientOriginalName();
         $fullname=$imgpath.$imagename;
-        Image::make($file)->resize(1400,750)->save($fullname);
+        Image::make($file)->resize(1400,570)->save($fullname);
         return $fullname;
     }
 }

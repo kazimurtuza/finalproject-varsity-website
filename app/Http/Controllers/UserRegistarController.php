@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\User;
+use App\annonce;
 use Auth;
 use Image;
 
@@ -60,11 +61,27 @@ class UserRegistarController extends Controller
 
     public function EditHomeSlide()
     {
-        return view('admin.EditHomePage');
+        return view('admin.EditHomePage',['id'=>'slide']);
     }
     public function PostEditHomeSlide()
     {
         return "PostEditHomeSlide";
+    }
+
+    public function announceHomeSlide($announce)
+    {
+        return view('admin.EditHomePage',['id'=>$announce]);
+    }
+
+    public function postannonceslide(Request $request)
+    {
+        $data=annonce::find(1);
+        $data->announce=$request->about;
+        $data->status=$request->status;
+        $data->save();
+
+        return "update";
+       
     }
 
 

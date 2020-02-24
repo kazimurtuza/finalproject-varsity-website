@@ -1,7 +1,9 @@
 @extends('includes.headerFooter')
 @section('content')
-
-@if('show'=='show')
+@php
+    $announce=App\annonce::find(1);
+@endphp
+@if($announce->status=='1')
 <div class="" style="background-color: honeydew;
 background-color: honeydew;
     position: absolute;
@@ -24,7 +26,7 @@ background-color: honeydew;
     
     <marquee behavior="" direction="" style="color:red;font-style: italic;"> 
   
-      bangla admishon is started</marquee> </div>
+    {{$announce->announce}}</marquee> </div>
       @endif
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -33,12 +35,12 @@ background-color: honeydew;
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
   @php
-      $sliders=App\Homeslider::all()->where('status','1');
+      $sliders=App\Homeslider::all()->where('status','=','1');
   @endphp
   <div class="carousel-inner">
     @foreach ($sliders as $slider)
   <div class="carousel-item {{$loop->first ? 'active ': ''}}">
-      <img class="d-block w-100" src="{{asset($slider->sliderpic)}}" alt="First slide">
+      <img src="{{asset($slider->sliderpic)}}" alt="First slide">
       <div class="carousel-caption bg-info">
         <h3> {{$slider->title}}</h3>
         <p> {{$slider->about}}</p>
@@ -47,9 +49,6 @@ background-color: honeydew;
     </div>
     @endforeach
  
-    {{-- <div class="carousel-item">
-      <img class="d-block w-100" src="{{asset($slider->sliderpic)}}" alt="Second slide">
-    </div> --}}
 
  
   </div>

@@ -30,6 +30,8 @@ Route::get('/user-list','UserRegistarController@showuserlist')->name('user-list'
 
 
 Route::get('/Edit-home-slide','UserRegistarController@EditHomeSlide')->name('Edit-home-slide');
+Route::get('/announce-home-slide/{announce}','UserRegistarController@announceHomeSlide')->name ('announce-home-slide');
+Route::post('/post-annonce-slide','UserRegistarController@postannonceslide')->name ('post-annonce-slide');
 Route::post('/PosrEdit-home-slide','HomesliderController@PostEditHomeSlide')->name('PostEdit-home-slide');
 
 
