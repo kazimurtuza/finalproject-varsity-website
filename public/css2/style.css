@@ -73,6 +73,12 @@ body {
     background-color: black;
 
   }
+  th{
+    text-align: center;
+  }
+  td{
+    text-align: center;
+  }
 
   #sidebar:hover{
     left:0px;

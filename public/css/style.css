@@ -7,7 +7,9 @@ body {
   color: gray;
 }
 
-
+th{
+  text-align: center;
+}
 
 #sidebar{
   position: fixed;

@@ -315,15 +315,42 @@
               <li><a href="/contactform.html">Contact Form</a></li>
             </ul>
           </li>
-          <li class="sub-menu">
+          <li>
             <a href="#">
               <i class="fa fa-th"></i>
-              <span>Data Tables</span>
+              <span>Academic</span>
               </a>
-            <ul class="sub">
-              <li><a href="/basic_table.html">Basic Table</a></li>
-              <li><a href="/responsive_table.html">Responsive Table</a></li>
-              <li><a href="/advanced_table.html">Advanced Table</a></li>
+            <ul >
+              <li>
+                <a href="#">
+                 
+                  <span>DEPARTMENT</span>
+                  </a>
+                <ul class="sub">
+                <li><a href="{{route('department_add_show')}}">Add department</a></li>
+                  <li><a href="/advanced_form_components.html">Department List</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">
+                
+                  <span>INTAKE</span>
+                  </a>
+                <ul class="sub">
+                  <li><a href="/form_component.html">Add Intake</a></li>
+                  <li><a href="/advanced_form_components.html">Intake List</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">
+                
+                  <span>SECTION</span>
+                  </a>
+                <ul class="sub">
+                  <li><a href="/form_component.html">Add section</a></li>
+                  <li><a href="/advanced_form_components.html">section List</a></li>
+                </ul>
+              </li>
             </ul>
           </li>
           <li>

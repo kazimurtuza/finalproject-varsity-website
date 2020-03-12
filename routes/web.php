@@ -48,3 +48,6 @@ Route::post('/PostEditUser-photo','UserRegistarController@PostEditUserphoto')->n
 Route::get('/EditUser-passrord','UserRegistarController@EditUserpassword')->name('EditUser-password');
 Route::post('/PostEditUser-password','UserRegistarController@PostEditUserpassword')->name('PostEditUser-password');
 Route::get('/Show-User-profile','UserRegistarController@ShowUserprofile')->name('Show-User-profile');
+
+// department_add and show
+Route::get('/department_add_show','DepartmentController@DepartmentAddShow')->name('department_add_show');
