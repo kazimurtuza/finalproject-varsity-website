@@ -51,3 +51,5 @@ Route::get('/Show-User-profile','UserRegistarController@ShowUserprofile')->name(
 
 // department_add and show
 Route::get('/department_add_show','DepartmentController@DepartmentAddShow')->name('department_add_show');
+Route::post('/add_department','DepartmentController@AddDepartment')->name('add_department');
+Route::get('/department_list','DepartmentController@DepartmentList')->name('department_list');

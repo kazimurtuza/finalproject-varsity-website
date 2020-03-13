@@ -4,9 +4,9 @@
    <div class="container">
    
     <div class="row">
-        <div class="col-12 border-info">
+        <div class="col-12 border-info ">
             <div class=" m-auto">
-                <h3 class="text-center">Add department </h3>
+            <h3 class="text-center">Add department</h3>
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Add department </button>
 
             </div>
@@ -17,28 +17,22 @@
 
     </div>
  
-    <div class="row center">
+    <div class="row center mt-4" style=" margin-top:20px">
         <div class=" col-11">
-            <div class="table-responsive m-auto">
+            <div class="table-responsive m-auto ">
                 <table class=" table table-hover table-bordered text-center">
-                    <thead>
+                    <thead class=" bg-info">
                         <tr>
-                            <th>SRL</th>
-                            <th>department_name</th>
-                            <th>status</th>
+                            <th>SL.</th>
+                            <th>Department_name</th>
+                            <th>Status</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>cse</td>
-                            <td>publish</td>
-                            <td>
-                                <a href="#" class="btn btn-sm btn-dark"><span class="fa fa-eye"></span></a>
-                                <a href="#" class="btn btn-sm btn-info"><span class="fa fa-edit"></span></a>
-                            <a href="#" class="btn btn-sm btn-danger"><span class="fa fa-trash"></span></a>
-                            </td>
-                        </tr>
+                    <tbody id="departmentbody">
+
+                   @include('admin.ajax_academic.departmentList')
+                       
                     </tbody>
                 </table>
 
@@ -62,26 +56,36 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+    <form action="{{route('add_department')}}" method="post" id="department">
+        @csrf
       <div class="modal-body">
-        <form action="" method="">
+        
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">add department:</label>
-            <input type="text" class="form-control" id="department">
+            <input type="text" class="form-control" name="department" id="department" required>
+            @error('department')
+            <div>
+            <span>{{$message}}</span>
+            </div>
+
+            @enderror
+
+        
           </div>
-          <div class="form-group">
-            <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message-text"></textarea>
-          </div>
+
+       
         
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Add</button>
+        <button type="submit" class="btn btn-primary">Add</button>
       </div>
     </form>
     </div>
   </div>
 </div>
+
+
 
   {{-- department add miodal end --}}
     
@@ -89,10 +93,28 @@
    </div>
 
    <script>
-    function department()
-     {
-         alert('bangla');
-     }
+    $("#department").submit(function(e){
+        e.preventDefault();
+        var data=$(this).serialize();
+        var url=$(this).attr('action');
+        var method=$(this).attr('method');
+           $('#exampleModal').modal('hide');
+        $.ajax({
+            data:data,
+            url:url,
+            type:method,
+            success:function()
+            {
+                $.get("{{route('department_list')}}",function(data){
+                  
+                  $("#departmentbody").empty().html(data);
+
+                })
+            }
+        })
+
+    })
+    
    </script>
     @endsection
     

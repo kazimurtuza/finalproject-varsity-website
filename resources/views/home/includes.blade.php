@@ -23,6 +23,7 @@
   <link href="{{asset('public')}}/css3/style.css" rel="stylesheet">
   <link href="{{asset('public')}}/css3/style-responsive.css" rel="stylesheet">
   <script src="{{asset('public')}}/lib/chart-master/Chart.js"></script>
+  <script src="{{asset('public')}}/js/jquery-3.4.1.js"></script>
 
   <!-- =======================================================
     Template Name: Dashio
@@ -36,7 +37,7 @@
   <div>
     <header class="header black-bg">
       <div class="sidebar-toggle-box">
-        <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+        <div class="fa fa-bars tooltips" style="color: rgba(155, 176, 163, 1);" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
       <a href="" class="logo"><b>BU<span>BT</span></b></a>
