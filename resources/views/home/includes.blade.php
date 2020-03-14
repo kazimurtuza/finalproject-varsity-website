@@ -338,7 +338,7 @@
                   <span>INTAKE</span>
                   </a>
                 <ul class="sub">
-                  <li><a href="/form_component.html">Add Intake</a></li>
+                <li><a href="{{route('intake_add_show')}}">Add Intake</a></li>
                   <li><a href="/advanced_form_components.html">Intake List</a></li>
                 </ul>
               </li>

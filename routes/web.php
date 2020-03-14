@@ -40,7 +40,6 @@ Route::get('/EditUser-info','UserRegistarController@EditUserinfo')->name('EditUs
 Route::post('/PostEditUser-info','UserRegistarController@PostEditUserinfo')->name('PostEditUser-info');
 
 Route::get('/PostEditUser-info','UserRegistarController@EditUserinfo')->name('PostEditUser-info');
-
 Route::get('/EditUser-photo','UserRegistarController@EditUserphoto')->name('EditUser-photo');
 
 Route::post('/PostEditUser-photo','UserRegistarController@PostEditUserphoto')->name('PostEditUser-photo');
@@ -53,3 +52,9 @@ Route::get('/Show-User-profile','UserRegistarController@ShowUserprofile')->name(
 Route::get('/department_add_show','DepartmentController@DepartmentAddShow')->name('department_add_show');
 Route::post('/add_department','DepartmentController@AddDepartment')->name('add_department');
 Route::get('/department_list','DepartmentController@DepartmentList')->name('department_list');
+
+// intake_add and show
+Route::get('/intake_add_show','IntakeController@IntakeAddShow')->name('intake_add_show');
+Route::post('/add_intake','IntakeController@AddIntake')->name('add_intake');
+Route::get('/intake_list','IntakeController@ShowDepartmentwiseIntake')->name('intake_list');
+Route::get('/get_intake','IntakeController@GetIntake')->name('get_intake');
