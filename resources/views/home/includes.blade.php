@@ -348,7 +348,7 @@
                   <span>SECTION</span>
                   </a>
                 <ul class="sub">
-                  <li><a href="/form_component.html">Add section</a></li>
+                  <li><a href="{{route('section_add_show')}}">Add section</a></li>
                   <li><a href="/advanced_form_components.html">section List</a></li>
                 </ul>
               </li>

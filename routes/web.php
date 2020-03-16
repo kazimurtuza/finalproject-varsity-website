@@ -58,3 +58,11 @@ Route::get('/intake_add_show','IntakeController@IntakeAddShow')->name('intake_ad
 Route::post('/add_intake','IntakeController@AddIntake')->name('add_intake');
 Route::get('/intake_list','IntakeController@ShowDepartmentwiseIntake')->name('intake_list');
 Route::get('/get_intake','IntakeController@GetIntake')->name('get_intake');
+
+
+//section_add and show
+Route::get('/section_add_show','SectionController@SectionAddShow')->name('section_add_show');
+Route::get('/intake-list','SectionController@IntakeList')->name('intake-list');
+Route::post('/add_section','SectionController@AddSection')->name('add_section');
+Route::get('/Section-Table-Show','SectionController@SectionTableShow')->name('Section-Table-Show');
+Route::get('/Section-list','SectionController@SectionList')->name('Section-list');

@@ -18,7 +18,7 @@ class CreateSectionsTable extends Migration
             $table->integer('department_id');
             $table->integer('intake_id');
             $table->string('section');
-            $table->integer('capaity');
+            $table->integer('capacity');
             $table->boolean('status');
             $table->timestamps();
         });
