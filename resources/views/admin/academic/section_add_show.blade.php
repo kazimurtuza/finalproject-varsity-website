@@ -40,7 +40,7 @@
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody id="intakebody">
+                    <tbody id="listshow"> 
 
                    {{-- @include('admin.ajax_academic.departmentList') --}}
                        
@@ -98,7 +98,11 @@
 
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Section:</label>
-         <input type="text" name="section" id="sectionid" class=" form-control" autocomplete >
+        
+          <input class="form-control" name="section" id="sectionid" value="" >
+       
+           
+         </select>
             @error('section')
             <div>
             <span>{{$message}}</span>
@@ -128,14 +132,14 @@
 
 
   <script>
-      
+
+    //------ request send to add section -------
       $("#sectionadd").submit(function(e){
           e.preventDefault();
           var data=$(this).serialize();
           var url=$(this).attr('action');
           var method=$(this).attr('method');
           $("#exampleModal").modal('hide');
-
           $.ajax({
               url:url,
               type:method,
@@ -145,7 +149,7 @@
                 var intake=$("#intakeselect").val();
                 $.get("{{route('Section-Table-Show')}}",{department:dprt,intake:intake},function(data)
                 {
-                     $("#intakebody").empty().html(data);
+                     $("#listshow").empty().html(data);
                      console.log(data);
                 })
 
@@ -153,7 +157,8 @@
           })
           
       })
-
+    
+    // when select department intakeList show for add section
        $("#depart").change(function(){
         var data=$(this).val();
            $.get("{{route('intake-list')}}",{id:data},function(data)
@@ -162,6 +167,7 @@
            })
        })
 
+           // when select department intakeList show for search list
        $("#departshow").change(function(){
         var data=$(this).val();
            $.get("{{route('intake-list')}}",{id:data},function(data)
@@ -170,18 +176,19 @@
            })
        })
 
+  // when select department and  intake,  it show List
        $("#intakeshow").change(function(){
         var dprt=$("#departshow").val();
                 var intake=$("#intakeshow").val();
                 $.get("{{route('Section-Table-Show')}}",{department:dprt,intake:intake},function(data)
                 {
-                     $("#intakebody").empty().html(data);
+                     $("#listshow").empty().html(data);
                      console.log(data);
                 })
       
        })
 
-
+      //  when intakeselect last section show
        $("#intakeselect").change(function(){
         var dprt=$("#depart").val();
                 var intake=$("#intakeselect").val();
@@ -190,23 +197,19 @@
                     // var str=data;
                     // var num =str.substr(8,1);
                     // var int= parseInt(num);
-                    // var update=int+1;
-                    // // var mydata=<option value=""></option>
-                    // var dd="section_";
-                    // var val="dd.update";
-                    //  console.log(val);
-                    //   $("#sectionid").empty().html(data);
-                    //  console.log(data);
+                    //  var update=int+1;
+                  
+                    // var str = "section-"
+                    // var total = str + update;
 
                     $("#sectionid").val(data);
+                 
                 })
        })
 
-//        var str = "Hello world!";
-//   var res = str.substr(6, 4);
 
   </script>
-    
+
   
     @endsection
     

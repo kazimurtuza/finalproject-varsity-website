@@ -65,4 +65,5 @@ Route::get('/section_add_show','SectionController@SectionAddShow')->name('sectio
 Route::get('/intake-list','SectionController@IntakeList')->name('intake-list');
 Route::post('/add_section','SectionController@AddSection')->name('add_section');
 Route::get('/Section-Table-Show','SectionController@SectionTableShow')->name('Section-Table-Show');
-Route::get('/Section-list','SectionController@SectionList')->name('Section-list');
+Route::get('/Section-list','SectionController@SectionList')->name('Section-list'); 
+Route::get('/student-Registration','Student')->name('student-Registration')

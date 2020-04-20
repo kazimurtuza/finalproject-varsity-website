@@ -75,7 +75,7 @@
 
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Intake:</label>
-            <input type="text" class="form-control" name="intake" value="ldkfh" id="intakename" required>
+            <input type="text" class="form-control" name="intake" value="" id="intakename" required>
             @error('intake')
             <div>
             <span>{{$message}}</span>
@@ -156,7 +156,9 @@
        })
   
 
-       })
+       }) 
+
+      //  when department click show the last number of intake
        $("#depart").change(function(){
          var val=$(this).val();
          $.get("{{route('get_intake')}}",{val:val},function(data)

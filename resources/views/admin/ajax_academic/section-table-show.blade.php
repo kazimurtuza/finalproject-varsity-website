@@ -2,7 +2,7 @@
           @php($i=1)
           @foreach ($data as $item)
           <tr>
-       
+        
            <td>{{$i++}}</td>
            <td>{{$item->department}}</td>
            <td>{{$item->intake}}</td>

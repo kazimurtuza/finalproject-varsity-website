@@ -11,12 +11,13 @@
 
   <!-- Favicons -->
   <link href="{{asset('public')}}/img/favicon.png" rel="icon">
-  <link href="{{asset('public')}}/img/apple-touch-icon.png" rel="apple-touch-icon">
+  {{-- <link href="{{asset('public')}}/fonts/fontawesome/css/font-awesome.min.css" rel="apple-touch-icon"> --}}
+<link rel="stylesheet" href="{{'public'}}/fonts/fontawesome/css/font-awesome.min.css">
 
   <!-- Bootstrap core CSS -->
   <link href="{{asset('public')}}/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!--external css-->
-  <link href="{{asset('public')}}/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+
   <link rel="stylesheet" type="text/css" href="{{asset('public')}}/css3/zabuto_calendar.css">
   <link rel="stylesheet" type="text/css" href="{{asset('public')}}/lib/gritter/css/jquery.gritter.css" />
   <!-- Custom styles for this template -->
@@ -259,8 +260,8 @@
           </li>
           <li class="sub-menu">
             <a href="#">
-              <i class="fa fa-desktop"></i>
-              <span>Users</span>
+              <i class="fas fa-users"></i>
+              <span>Usersyy</span>
               </a>
             <ul class="sub">
               {{-- <li><a href="general.html">General</a></li>
@@ -272,6 +273,19 @@
               <li><a href="">bangla2</a></li>
             </ul>
           </li>
+
+          <li class="sub-menu">
+            <a href="#">
+         <i class="fas fa-user-graduate"></i>
+              <span>Student</span>
+              </a>
+            <ul class="sub">
+            <li><a href="{{route('student-Registration')}}">Registration</a></li>
+            {{-- <li><a href="{{route('user-list')}}">User list</a></li> --}}
+            </ul>
+          </li>
+
+
           <li class="sub-menu">
             <a href="#">
               <i class="fa fa-cogs"></i>
@@ -354,6 +368,8 @@
               </li>
             </ul>
           </li>
+
+
           <li>
             <a href="/inbox.html">
               <i class="fa fa-envelope"></i>
