@@ -63,6 +63,7 @@
         @csrf
       <div class="modal-body">
         
+        {{-- select department --}}
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Department:</label>
             <select class=" form-control" name="department" id="depart" required>
@@ -73,6 +74,7 @@
             </select>
           </div>
 
+       {{-- add intake  --}}
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Intake:</label>
             <input type="text" class="form-control" name="intake" value="" id="intakename" required>

@@ -66,4 +66,22 @@ Route::get('/intake-list','SectionController@IntakeList')->name('intake-list');
 Route::post('/add_section','SectionController@AddSection')->name('add_section');
 Route::get('/Section-Table-Show','SectionController@SectionTableShow')->name('Section-Table-Show');
 Route::get('/Section-list','SectionController@SectionList')->name('Section-list'); 
-Route::get('/student-Registration','Student')->name('student-Registration')
+
+//student part
+Route::get('/student-Registration','StudentController@StudentRegistration')->name('student-Registration');
+//in student-registration when click department show intake list
+Route::get('/intake-list','StudentController@intakelist')->name('intake-list');
+Route::get('/intakewise-sectonList','StudentController@intakewisesectonList')->name('intakewise-sectonList');
+Route::post('/student-register','StudentController@studentregister')->name('student-register'); 
+Route::get('/student-list','StudentController@studentlist')->name('student-list'); 
+Route::get('/showintake-list','StudentController@showintakelist')->name('showintake-list'); 
+Route::get('/showsection-list','StudentController@showsectionlist')->name('showsection-list'); 
+Route::get('/studentsList-table','StudentController@studentsListTable')->name('studentsList-table'); 
+
+Route::get('/departmentwise-table','StudentController@departmentwiseStudentlist')->name('departmentwise-table'); 
+
+Route::get('/intakewise-table','StudentController@intakeWiseStudentlist')->name('intakewise-table'); 
+Route::get('/student-Nx','studentNxController@studentNx')->name('student-Nx'); 
+
+
+Route::get('/nx-home','studentNxController@index')->name('nx-home'); 

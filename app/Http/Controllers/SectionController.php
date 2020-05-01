@@ -52,7 +52,7 @@ class SectionController extends Controller
             ['sections.intake_id','=',$request->intake],  
             ])
         ->get();
-      
+       
     
          return  view('admin.ajax_academic.section-table-show',['data'=>$data]);
        
@@ -68,6 +68,8 @@ class SectionController extends Controller
         return $data->section;
 
     }
+
+
 
  
 }

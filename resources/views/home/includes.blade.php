@@ -281,6 +281,7 @@
               </a>
             <ul class="sub">
             <li><a href="{{route('student-Registration')}}">Registration</a></li>
+            <li><a href="{{route('student-list')}}">User list</a></li>
             {{-- <li><a href="{{route('user-list')}}">User list</a></li> --}}
             </ul>
           </li>

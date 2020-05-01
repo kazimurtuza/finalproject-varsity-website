@@ -46,6 +46,16 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+        'studentNx' => [
+            'driver' => 'session',
+            'provider' => 'students_personal_infos',
+        ],
+
+        'studentNx-api' => [
+            'driver' => 'token',
+            'provider' => 'students_personal_infos',
+            'hash' => false,
+        ],
     ],
 
     /*
@@ -69,6 +79,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+        'students_personal_infos' => [
+            'driver' => 'eloquent',
+            'model' => App\students_personal_info::class,
         ],
 
         // 'users' => [
@@ -95,6 +109,12 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'students_personal_infos' => [
+            'provider' => 'students_personal_infos',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
