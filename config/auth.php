@@ -46,14 +46,26 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
-        'studentNx' => [
+     
+            'studentid' => [
             'driver' => 'session',
-            'provider' => 'students_personal_infos',
+            'provider' => 'studentids',
+        ],
+
+           'studentid-api' => [
+            'driver' => 'token',
+            'provider' => 'studentids',
+            'hash' => false,
+        ],
+        
+        'student_acc' => [
+            'driver' => 'session',
+            'provider' => 'student_accs',
         ],
 
         'studentNx-api' => [
             'driver' => 'token',
-            'provider' => 'students_personal_infos',
+            'provider' => 'student_accs',
             'hash' => false,
         ],
     ],
@@ -80,6 +92,17 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
+         'studentids' => [
+            'driver' => 'eloquent',
+            'model' => App\studentid::class,
+        ],
+       
+        'student_accs' => [
+            'driver' => 'eloquent',
+            'model' => App\studentAcc::class,
+        ],
+
+
         'students_personal_infos' => [
             'driver' => 'eloquent',
             'model' => App\students_personal_info::class,
@@ -109,6 +132,18 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'studentids' => [
+            'provider' => 'studentids',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'student_accs' => [
+            'provider' => 'student_accs',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

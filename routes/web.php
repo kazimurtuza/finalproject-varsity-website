@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -81,7 +81,14 @@ Route::get('/studentsList-table','StudentController@studentsListTable')->name('s
 Route::get('/departmentwise-table','StudentController@departmentwiseStudentlist')->name('departmentwise-table'); 
 
 Route::get('/intakewise-table','StudentController@intakeWiseStudentlist')->name('intakewise-table'); 
-Route::get('/student-Nx','studentNxController@studentNx')->name('student-Nx'); 
+
+//student-nx
+
+Route::get('/nx-login','NxController@showlogin')->name('nx-login');
+Route::post('/studentlogin','NxController@login')->name('studentlogin');
+Route::get('/nx-home','nxhomeController@Nxhome')->name('nx-home');
+Route::get('/nx-studentinfo','nxhomeController@Nxstudentinfo')->name('nx-studentinfo');  
 
 
-Route::get('/nx-home','studentNxController@index')->name('nx-home'); 
+
+

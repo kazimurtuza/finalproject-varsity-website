@@ -8,6 +8,7 @@ use App\department;
 use App\intake;
 use App\section;
 use App\student_academic_info;
+use App\studentid;
 use App\students_personal_info;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB as FacadesDB;
@@ -96,6 +97,22 @@ class StudentController extends Controller
         $academic->type_status=1;
         $academic->save();
 
+        $studentNxid=new studentid();   
+        $studentNxid->academic_id=$academic->id;
+        $studentNxid->stuinfo_id=$stuinfo->id;  
+        $studentNxid->image=$url;                                 
+        $studentNxid->student_id=$stuinfo->id;                                 
+        $studentNxid->roll=$stuinfo->id;;  
+        $studentNxid->name=$request->StudentName;
+        $studentNxid->departmentid=$request->department;
+        $studentNxid->intakeid=$request->intake;
+        $studentNxid->section_id=$request->section;
+        $studentNxid->plainpassword=$request->Mobile;
+        $studentNxid->password=Hash::make($request->Mobile);
+        $studentNxid->email=$request->email;
+        $studentNxid->save();  
+
+
         
         return back()->with('message','successfull');
 
@@ -105,7 +122,7 @@ class StudentController extends Controller
     {
         $data=department::all();
         return view('admin.student.student-list',['data'=>$data]);
-    }
+    }   
 
     public function showintakelist(Request $request)
     {
@@ -125,7 +142,7 @@ class StudentController extends Controller
 
     }
 
-    public function studentsListTable(Request $request)
+    public function studentsListTable(Request $request) 
     {
         $studentdata=DB::table('students_personal_infos')
         ->join('student_academic_infos','students_personal_infos.id','=','student_academic_infos.student_id')
@@ -168,7 +185,7 @@ class StudentController extends Controller
             ['student_academic_infos.department_id','=', $request->departmentid],
             ['student_academic_infos.intake_id','=',$request->intakeid],
              ])->get();
-              return view('admin.student.intake-student-table',['data'=>$studentdata]);
+              return view('admin.student.intake-student-table',['data'=>$studentdata]); 
             
     }
 }

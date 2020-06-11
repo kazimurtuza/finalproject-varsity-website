@@ -47,7 +47,7 @@
              <a class="nav-link" href="contact.html"> <img src="{{asset('public/images/contact.png')}}" height="25px" width="25px" alt=""></a>
             </div>
              <div class=" col-3 bg-light">
-             <a class="nav-link" href="{{route('student-Nx')}}" title="BUBT Annex" target="_blank"> <img src="{{asset('public/images/Nx.png')}}" alt=""></a>
+             <a class="nav-link" href="{{route('nx-login')}}" title="BUBT Annex" target="_blank"> <img src="{{asset('public/images/Nx.png')}}" alt=""></a>
             </div>
             <div class=" col-3 bg-light">
              <a class="nav-link" href="contact.html" title="BUBT Annex"> <img src="{{asset('public/images/careers.png')}}" alt=""></a>

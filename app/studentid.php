@@ -6,7 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class students_personal_info extends Authenticatable
+class studentid extends Authenticatable
 {
     use Notifiable;
 
@@ -16,22 +16,7 @@ class students_personal_info extends Authenticatable
      * @var array
      */
     protected $fillable = [
-'student_name',
-'address',
-'fater_name',
-'father_mobile',
-'mother_name',
-'mother_mobile',
-'father_profession',
-'mother_profession',
-'email_address',
-'sms_mobile', 
-'date_of_admission',
-'student_photo',
-'status',
-'password',
-'encrypted_password',
-'registeredBy',
+        'name','email', 'password','plainpassword','student_id','roll', 'academic_id','stuinfo_id', 'departmentid','intakeid','section_id','image',
     ];
 
     /**
@@ -40,7 +25,7 @@ class students_personal_info extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'encrypted_password', 'remember_token',
+        'password', 'remember_token',
     ];
 
     /**

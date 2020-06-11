@@ -16,11 +16,6 @@ class CreateStudentsPersonalInfosTable extends Migration
         Schema::create('students_personal_infos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('student_name');
-            // $table->integer('department_id');
-            // $table->integer('intake_id');
-            // $table->integer('section_id');
-            // $table->integer('roll_no');
-            // $table->integer('shift_id');
             $table->string('address');
             $table->string('fater_name');
             $table->string('father_mobile')->nullable();
@@ -51,3 +46,4 @@ class CreateStudentsPersonalInfosTable extends Migration
         Schema::dropIfExists('students_personal_infos');
     }
 }
+

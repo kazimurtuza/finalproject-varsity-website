@@ -15,7 +15,7 @@ class CreateStudentAcademicInfosTable extends Migration
     {
         Schema::create('student_academic_infos', function (Blueprint $table) {
             $table->bigIncrements('id');
-             $table->integer('student_id');
+            $table->integer('student_id');
             $table->integer('department_id');
             $table->integer('intake_id');
             $table->integer('section_id');
