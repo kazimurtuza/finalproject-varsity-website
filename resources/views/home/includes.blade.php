@@ -277,6 +277,18 @@
           <li class="sub-menu">
             <a href="#">
          <i class="fas fa-user-graduate"></i>
+              <span>Teacher</span>
+              </a>
+            <ul class="sub">
+            <li><a href="{{route('teacher-register')}}">Teacher  Registration</a></li>
+            <li><a href="{{route('student-list')}}">Teachers-class-add</a></li>
+            <li><a href="{{route('student-list')}}">Teacher list</a></li>
+            {{-- <li><a href="{{route('user-list')}}">User list</a></li> --}}
+            </ul>
+          </li>
+          <li class="sub-menu">
+            <a href="#">
+         <i class="fas fa-user-graduate"></i>
               <span>Student</span>
               </a>
             <ul class="sub">
@@ -305,7 +317,7 @@
           <li class="sub-menu">
             <a href="#">                
               <i class="fa fa-book"></i>
-              <span>Edit Page</span>
+              <span>Edit Page</span>  
               </a>
             <ul class="sub">
             <li><a href="{{route('Edit-home-slide')}}">Add home page</a></li>

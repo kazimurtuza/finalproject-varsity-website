@@ -17,7 +17,11 @@ class CreateStudentResultsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('student_id');
             $table->integer('course_id');
+            $table->string('department_id');
+            $table->string('intake_id');
+            $table->string('section_id');
             $table->string('semester_id');
+            $table->string('teacher_id')->nullable();
             $table->string('mid')->nullable();
             $table->string('final')->nullable();
             $table->string('extra')->nullable();

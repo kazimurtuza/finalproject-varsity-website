@@ -14,5 +14,9 @@ class studentResult extends Model
 'final',
 'extra',
 'attendance',
+'department_id',
+'intake_id',
+'section_id', 
+'teacher_id',
     ];
 }

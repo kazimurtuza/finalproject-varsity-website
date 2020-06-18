@@ -52,7 +52,7 @@ class StudentController extends Controller
             'FatherMobile'=>'numeric',
             'MotherMobile'=>'numeric',
             'MotherName'=>'string',
-            'email'=>'string|email|max:255',
+            'email'=>'string|email|max:255|unique:students_personal_infos,email_address',
         ]);
 
         $imagefile=$request->file('photo');
@@ -120,8 +120,11 @@ class StudentController extends Controller
         foreach ($subject as $data) {
         $studentResult=new studentResult(); 
         $studentResult->student_id=$stuinfo->id;
-        $studentResult->course_id=$subject->id;
+        $studentResult->course_id=$data->id;
         $studentResult->semester_id=$academic->semester;
+        $studentResult->department_id=$request->department;
+        $studentResult->intake_id=$request->intake;
+        $studentResult->section_id=$request->section; 
         $studentResult->mid='';
         $studentResult->final='';
         $studentResult->extra='';
