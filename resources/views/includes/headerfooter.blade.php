@@ -52,7 +52,6 @@
             <div class=" col-3 bg-light">
              <a class="nav-link" href="contact.html" title="BUBT Annex"> <img src="{{asset('public/images/careers.png')}}" alt=""></a>
             </div>
-       
 
             </div>
 

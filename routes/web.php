@@ -88,6 +88,17 @@ Route::get('/nx-login','NxController@showlogin')->name('nx-login');
 Route::post('/studentlogin','NxController@login')->name('studentlogin');
 Route::get('/nx-home','nxhomeController@Nxhome')->name('nx-home');
 Route::get('/nx-studentinfo','nxhomeController@Nxstudentinfo')->name('nx-studentinfo');  
+Route::get('/nx-academicinfo','nxhomeController@academicinfo')->name('nx-academicinfo');  
+Route::get('/nx-academicinfo2','nxhomeController@academicinfo2')->name('nx-academicinfo2');  
+Route::post('/Nxstudent-logout','nxhomeController@Nxlogout')->name('Nxstudent-logout');
+
+//teachers
+Route::get('/teacher-login','TeacherLoginController@loginshow')->name('teacher-login');
+Route::post('/teacherlogin','TeacherLoginController@login')->name('teacherlogin');
+Route::get('/teacher-home','TeacherHomeController@teacherhome')->name('teacher-home');
+Route::post('/teacher-logout','TeacherHomeController@logout')->name('teacher-logout');
+Route::get('/teacher-register','TeachersdataController@TeacherRegister')->name('teacher-register');
+Route::post('/teacher-register','TeachersdataController@TeacherRegistration')->name('teacher-register');
 
 
 

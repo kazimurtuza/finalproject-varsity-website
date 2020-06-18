@@ -13,11 +13,21 @@ class Handler extends ExceptionHandler
         if ($request->expectsJson()) {
             return response()->json(['error' => 'Unauthenticated.'], 401);
         }
-         if ($request->is('studentNx') || $request->is('nx-home')) {
+        //   if ($request->is('teacher') || $request->is('teacher-Home')) {
+        //     return redirect()->guest('teacher-login');
+        // }
+         if ($request->is('student') || $request->is('teacher-home')) {
+            return redirect()->guest('teacher-login');
+        }
+         if ($request->is('studentid') || $request->is('nx-home')) {
             return redirect()->guest('nx-login');
         }
      else{
-        return redirect()->guest(route('login'));
+        return redirect()->guest('login');  
     }
+} 
 }
-}
+
+   
+
+

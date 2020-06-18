@@ -180,7 +180,7 @@
                   $("#intakebody").empty().html(data);
               
        })
-       })
+       }) 
 
    </script>
     @endsection

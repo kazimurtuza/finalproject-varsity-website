@@ -32,31 +32,12 @@
   <script src="{{asset('public')}}/lib/chart-master/Chart.js"></script>
   <script src="{{asset('public')}}/js/jquery-3.4.1.js"></script>
 </head>  
-   <style>
-      #tableCrntAcdm tr td{ 
-        height: 60px;
-        padding:0%;
-        border: solid 3px rgb(134, 134, 134);
-        text-align: center;
-        text:bold;
-        color:black;
-        font-size: 15px;
-        
-        
-      }
-      #tableCrntAcdm tr th{ 
-        height: 60px;
-        padding:0%;
-        border: solid 3px rgb(134, 134, 134);
-        text-align: center;
-        font-size: 15px;
-      }
-  </style>
+ 
 <body>
   <div class="container">
     <div style=" margin-top:10%;margin-left:10%; position: absolute;">
       
-    <form action="{{route('Nxstudent-logout')}}" method="post">
+    <form action="{{route('teacher-logout')}}" method="post">
       @csrf 
       <input type="hidden" value="logout">
       <input type="submit" value="logout" class="btn btn-danger"> 
@@ -81,7 +62,7 @@
     <div style="    border: solid 2px #0000ff1f;
     margin-top: 7%;
     margin-left: 63%;
-    position: absolute;" class="bg-info"> <img src="{{asset(auth::user()->image)}}"width="100px" height="80px" alt=""></div>
+    position: absolute;" class="bg-info"> <img src=""width="100px" height="80px" alt=""></div>
   </div>
    
     <div> 

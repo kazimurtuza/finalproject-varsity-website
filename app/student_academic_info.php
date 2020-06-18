@@ -14,5 +14,6 @@ class student_academic_info extends Model
 'roll_no',
 'shift',
 'type_status',
+'semester',
     ];
 }

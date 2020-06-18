@@ -32,6 +32,7 @@
     Author: TemplateMag.com
     License: https://templatemag.com/license/
   ======================================================= -->
+
 </head>
 
 <body> 
@@ -230,13 +231,17 @@
       </div>
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-        <li><a class="logout" href="{{ route('logout') }}"
-          onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">Logout</a></li>
+        <li></li>
 
-       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+     <form action="{{route('teacher-logout')}}" method="post">
+      @csrf 
+      <input type="hidden" value="logout">
+      <input type="submit" value="logout" class="btn btn-danger btn-sm"> 
+    </form> 
+
+       {{-- <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
          @csrf
-       </form>
+       </form> --}}
         </ul>
       </div>
 

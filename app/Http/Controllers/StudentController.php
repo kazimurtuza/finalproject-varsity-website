@@ -9,6 +9,7 @@ use App\intake;
 use App\section;
 use App\student_academic_info;
 use App\studentid;
+use App\studentResult;
 use App\students_personal_info;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB as FacadesDB;
@@ -27,7 +28,7 @@ class StudentController extends Controller
     }
     public function intakelist(Request $request)
     {
-        $data=intake::where('department_id',$request->id)->get()->last();
+        $data=intake::where('department_id',$request->id)->get();
          return view('admin.student.intake-list',['data'=>$data]);
        
        
@@ -64,13 +65,6 @@ class StudentController extends Controller
         $stuinfo=new students_personal_info();
         $stuinfo->student_name=$request->StudentName;
         $stuinfo->address=$request->address;
-
-        // $stuinfo->department_id=$request->department;
-        // $stuinfo->intake_id=$request->intake;
-        // $stuinfo->section_id=$request->section;
-        // $stuinfo->roll_no=$stuinfo->id;
-        // $stuinfo->shift_id=$request->Shift;
-
         $stuinfo->fater_name=$request->FatherName;
         $stuinfo->father_mobile=$request->FatherMobile;
         $stuinfo->mother_name=$request->MotherName;
@@ -93,16 +87,18 @@ class StudentController extends Controller
         $academic->intake_id=$request->intake;
         $academic->section_id=$request->section;
         $academic->roll_no=$stuinfo->id;
+        $academic->semester=1;
         $academic->shift=$request->Shift;
         $academic->type_status=1;
         $academic->save();
 
+        // for student nx  id 
         $studentNxid=new studentid();   
         $studentNxid->academic_id=$academic->id;
         $studentNxid->stuinfo_id=$stuinfo->id;  
         $studentNxid->image=$url;                                 
         $studentNxid->student_id=$stuinfo->id;                                 
-        $studentNxid->roll=$stuinfo->id;;  
+        $studentNxid->roll=$stuinfo->id;
         $studentNxid->name=$request->StudentName;
         $studentNxid->departmentid=$request->department;
         $studentNxid->intakeid=$request->intake;
@@ -111,6 +107,31 @@ class StudentController extends Controller
         $studentNxid->password=Hash::make($request->Mobile);
         $studentNxid->email=$request->email;
         $studentNxid->save();  
+
+
+        //-------------student result ------------
+
+        //semester wise subject list
+  
+        $subject=DB::table('csecourselists')->where([
+            ['csecourselists.semester_id','=',$academic->semester]
+        ])->get();
+
+        foreach ($subject as $data) {
+        $studentResult=new studentResult(); 
+        $studentResult->student_id=$stuinfo->id;
+        $studentResult->course_id=$subject->id;
+        $studentResult->semester_id=$academic->semester;
+        $studentResult->mid='';
+        $studentResult->final='';
+        $studentResult->extra='';
+        $studentResult->attendance='';
+        $studentResult->save();
+           
+        };
+
+       
+       
 
 
         

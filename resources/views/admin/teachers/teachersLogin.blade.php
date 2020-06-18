@@ -1,4 +1,4 @@
-<!doctype html>
+    <!doctype html>
 <html lang="en">
   <head>
     <title>Free Education Template by Colorlib</title>
@@ -28,7 +28,7 @@
           <div class="col-md-6">
             <div class="form-wrap ">
                 <div class="row">
-                    <div class=" col-lg-12 bg-info">   <a class="nav-link "  href="#" title="BUBT Annex" target="_blank"> <img src="{{asset('public/images/NXX2.png')}}"class="mx-auto d-block" alt="" height="100px"></a> </div>
+                    {{-- <div class=" col-lg-12 bg-info">   <a class="nav-link "  href="#" title="BUBT Annex" target="_blank"> <img src="{{asset('public/images/NXX2.png')}}"class="mx-auto d-block" alt="" height="100px"></a> </div> --}}
 
                     @if(Session::get('message'))
                     <div class="alert alert-primary d-block text-danger text-center" role="alert">
@@ -40,11 +40,9 @@
                 </div>
              
 
-            <div>
+            <div> 
                
-
-
-               <form method="POST" action="{{ route('studentlogin') }}">
+               <form method="POST" action="{{ route('teacherlogin') }}">
                         @csrf
 
                         <div class="form-group row mt-5">

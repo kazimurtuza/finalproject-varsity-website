@@ -1,6 +1,8 @@
 
 
 <option value="">current intake</option>
-<option value="{{$data->id}}">{{$data->intake}}</option>
-    
+@foreach ($data as $data)
+    <option value="{{$data->id}}">{{$data->intake}}</option>
+@endforeach
+     
 

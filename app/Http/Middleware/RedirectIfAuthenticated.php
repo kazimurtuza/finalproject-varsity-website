@@ -18,10 +18,14 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->check()) {
-            return redirect(RouteServiceProvider::HOME);
+       
+         if ($guard=="studentid" && Auth::guard($guard)->check()) {
+            return redirect('nx-home'); 
         }
-
-        return $next($request);
+           if (Auth::guard($guard)->check()) {
+            return redirect(RouteServiceProvider::HOME); 
+        }
+    
+        return $next($request);  
     }
-}
+} 
