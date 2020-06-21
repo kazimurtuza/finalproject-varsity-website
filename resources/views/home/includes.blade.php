@@ -281,7 +281,7 @@
               </a>
             <ul class="sub">
             <li><a href="{{route('teacher-register')}}">Teacher  Registration</a></li>
-            <li><a href="{{route('student-list')}}">Teachers-class-add</a></li>
+            <li><a href="{{route('teacher-class-add')}}">Teachers-class-add</a></li>
             <li><a href="{{route('student-list')}}">Teacher list</a></li>
             {{-- <li><a href="{{route('user-list')}}">User list</a></li> --}}
             </ul>

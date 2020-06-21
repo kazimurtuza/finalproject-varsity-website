@@ -16,9 +16,9 @@ class CreateStudentResultsTable extends Migration
         Schema::create('student_results', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('student_id');
-            $table->integer('course_id');
+            $table->string('course_no'); 
             $table->string('department_id');
-            $table->string('intake_id');
+            $table->string('intake_id'); 
             $table->string('section_id');
             $table->string('semester_id');
             $table->string('teacher_id')->nullable();
@@ -26,6 +26,7 @@ class CreateStudentResultsTable extends Migration
             $table->string('final')->nullable();
             $table->string('extra')->nullable();
             $table->string('attendance')->nullable();
+            $table->string('status');
             $table->timestamps();
         });
     }

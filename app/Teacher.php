@@ -18,7 +18,7 @@ class Teacher extends Authenticatable
     protected $fillable = [
         'name','department','phone','email','plainpassword','password','teachersdata_id'
 
-    ];
+    ]; 
 
     /**
      * The attributes that should be hidden for arrays.

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\department;
+use App\studentResult;
 use App\Teacher;
 use App\teachersdata;
 use Illuminate\Http\Request;
@@ -14,19 +15,34 @@ class TeachersdataController extends Controller
 
     public function TeacherRegister()
     {
-          $department = department::all(); 
+          $department = department::all();  
           
      
         return view('admin.teachers.teachersRegister',['data'=>$department]);
 
     }
+    public function classadd()
+    {
+    $data=department::all(); 
+   return view('admin.teachers_class_add',['data'=>$data,'data2'=>$data]); 
+    }
+
+    public function TeacherAddDepartment(Request $request)
+    {
+        $data= studentResult::all()->where('department_id',$request->departmentid);
+           return view('admin.ajax_teacher_class_add.teacherdepartmentwise',['data'=>$data]); 
+       
+
+    }  
+
+
     public function TeacherRegistration(Request $request)
     {
-        $depart= $this->departmentsend($request->department);
+        // $depart= $this->departmentsend($request->department);
 
         $data=new teachersdata();
         $data->surname="Teacher"; 
-        $data->department=$depart;
+        $data->department=$request->department;
         $data->name=$request->name;
         $data->home=$request->home;
         $data->email=$request->email;
@@ -48,7 +64,7 @@ class TeachersdataController extends Controller
         $teacher=new Teacher();
         $teacher->teachersdata_id=$data->id;
         $teacher->name=$request->name;
-        $teacher->department=$depart;
+        $teacher->department=$request->department;
         $teacher->phone=$request->Mobile;
         $teacher->email=$request->email;
         $teacher->plainpassword=$request->Mobile;
@@ -61,11 +77,11 @@ class TeachersdataController extends Controller
      
     }
 
-    public function departmentsend($id)
-    {
-       $data=department::find($id);
-       $depart=$data->department;
-       return $depart;
+    // public function departmentsend($id)
+    // {
+    //    $data=department::find($id);
+    //    $depart=$data->department;
+    //    return $depart;
 
-    }
+    // }
 }

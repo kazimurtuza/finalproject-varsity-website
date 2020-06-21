@@ -8,7 +8,7 @@ class studentResult extends Model
 {
     protected $fillable=[
         'student_id',
-'course_id',
+'course_no',
 'semester_id',
 'mid',
 'final',
@@ -18,5 +18,6 @@ class studentResult extends Model
 'intake_id',
 'section_id', 
 'teacher_id',
+'status',
     ];
 }

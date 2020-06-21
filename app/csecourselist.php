@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class csecourselist extends Model
 { protected $fillable=[
     'course_no',
-'course_title',
+'course_title', 
 'cradit',
 'department_id',
 'type',

@@ -106,7 +106,7 @@ class StudentController extends Controller
         $studentNxid->plainpassword=$request->Mobile;
         $studentNxid->password=Hash::make($request->Mobile);
         $studentNxid->email=$request->email;
-        $studentNxid->save();  
+        $studentNxid->save();   
 
 
         //-------------student result ------------
@@ -117,10 +117,10 @@ class StudentController extends Controller
             ['csecourselists.semester_id','=',$academic->semester]
         ])->get();
 
-        foreach ($subject as $data) {
+        foreach ($subject as $data) { 
         $studentResult=new studentResult(); 
         $studentResult->student_id=$stuinfo->id;
-        $studentResult->course_id=$data->id;
+        $studentResult->course_id=$data->id; 
         $studentResult->semester_id=$academic->semester;
         $studentResult->department_id=$request->department;
         $studentResult->intake_id=$request->intake;
@@ -129,9 +129,10 @@ class StudentController extends Controller
         $studentResult->final='';
         $studentResult->extra='';
         $studentResult->attendance='';
+        $studentResult->status=1;
         $studentResult->save();
            
-        };
+        }; 
 
        
        
@@ -154,7 +155,7 @@ class StudentController extends Controller
              //intake list show
         $data=intake::where('department_id',$request->id)->get();
 
-        return view('admin.student.intakeshow',['data'=>$data]);
+        return view('admin.student.intakeshow',['data'=>$data]); 
       
 
     }
@@ -196,7 +197,7 @@ class StudentController extends Controller
              ])->get();
               return view('admin.student.department-student-table',['data'=>$studentdata]);
            
-    }
+    } 
     public function intakeWiseStudentlist(Request $request)
     {
          // student tabble show

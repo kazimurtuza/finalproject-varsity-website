@@ -99,7 +99,11 @@ Route::get('/teacher-home','TeacherHomeController@teacherhome')->name('teacher-h
 Route::post('/teacher-logout','TeacherHomeController@logout')->name('teacher-logout');
 Route::get('/teacher-register','TeachersdataController@TeacherRegister')->name('teacher-register');
 Route::post('/teacher-register','TeachersdataController@TeacherRegistration')->name('teacher-register');
+Route::get('/teacher-class-add','TeachersdataController@classadd')->name('teacher-class-add');
+Route::get('/teachers-departmentwise-add','TeachersdataController@TeacherAddDepartment')->name('teachers-departmentwise-add');  
+Route::get('sub-list','TeachersRoutineController@sublist')->name('sub-list');    
+Route::get('teacherlist','TeachersRoutineController@teacherlist')->name('teacherlist');      
+Route::post('teachersroutine-data','TeachersRoutineController@teachersRoutineData')->name ('teachersroutine-data');      
 
-
-
+ 
 
